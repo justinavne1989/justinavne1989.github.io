@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { site } from "../data/site";
-import { asset } from "../data/site";
 
 type SEOProps = {
   title?: string;
@@ -25,8 +24,13 @@ export function SEO({ title, description }: SEOProps) {
       ogDescription.setAttribute("content", description || site.description);
     }
 
+    const ogImageUrl = `${site.url}/og-image.png`;
     const ogImage = document.querySelector('meta[property="og:image"]');
-    if (ogImage) ogImage.setAttribute("content", asset("og-image.svg"));
+    if (ogImage) ogImage.setAttribute("content", ogImageUrl);
+    const ogImageSecure = document.querySelector('meta[property="og:image:secure_url"]');
+    if (ogImageSecure) ogImageSecure.setAttribute("content", ogImageUrl);
+    const twitterImage = document.querySelector('meta[name="twitter:image"]');
+    if (twitterImage) twitterImage.setAttribute("content", ogImageUrl);
   }, [title, description]);
 
   return null;

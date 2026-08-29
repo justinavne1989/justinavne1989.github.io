@@ -6,6 +6,7 @@ export const asset = (path: string) => {
 export const site = {
   name: "Justin Avne",
   title: "Justin Avne | Product, AI & Data",
+  url: "https://justinavne1989.github.io",
   description:
     "Product portfolio of Justin Avne, focused on product strategy, applied AI, consumer technology, sports technology, data products, and digital transformation.",
   linkedin: "https://www.linkedin.com/in/justin-avne-5b015324a",
