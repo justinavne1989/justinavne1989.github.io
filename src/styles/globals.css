@@ -80,6 +80,78 @@
   .shot-frame {
     @apply overflow-hidden border border-ink/10 bg-white shadow-shot;
   }
+
+  .word-morph-stage {
+    @apply mt-8 inline-flex items-center bg-ink sm:mt-10;
+    font-size: clamp(2.5rem, 8vw, 6.1rem);
+    padding: 0.22em 0.31em 0.26em;
+  }
+
+  .word-morph {
+    @apply m-0 flex items-end font-sans font-medium text-paper;
+    font-size: 1em;
+    line-height: 1;
+    letter-spacing: 0;
+  }
+
+  .word-morph-slot {
+    position: relative;
+    display: grid;
+    grid-template: auto / max-content;
+    justify-items: center;
+    align-items: end;
+    line-height: 1;
+    perspective: 160px;
+  }
+
+  .word-morph-slot:not(:last-child) {
+    margin-right: -0.04em;
+  }
+
+  .word-morph-ghost {
+    grid-area: 1 / 1;
+    visibility: hidden;
+    pointer-events: none;
+    user-select: none;
+    line-height: 1;
+  }
+
+  .word-morph-live,
+  .word-morph-flip {
+    grid-area: 1 / 1;
+    line-height: 1;
+  }
+
+  .word-morph-live {
+    color: #f7f5f1;
+  }
+
+  .word-morph-flip {
+    position: absolute;
+    inset: 0;
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .word-morph-flip.is-to {
+    transform: rotateX(-180deg);
+  }
+
+  .word-morph-face {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    color: #3d6eff;
+    line-height: 1;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  .word-morph-face-back {
+    transform: rotateX(180deg);
+  }
 }
 
 @layer utilities {

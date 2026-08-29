@@ -5,6 +5,7 @@ import { ProcessFlow } from "../components/ProcessFlow";
 import { ProjectCard } from "../components/ProjectCard";
 import { Reveal } from "../components/Reveal";
 import { SEO } from "../components/SEO";
+import { WordTransform } from "../components/WordTransform";
 import { builtProjects, leadershipProject } from "../data/projects";
 import { focusAreas, launchProofs, processSteps } from "../data/site";
 
@@ -21,6 +22,9 @@ export function HomePage() {
             <h1 className="mt-6 font-sans text-display-xl text-ink">
               Turning complex problems into products.
             </h1>
+            <div className="word-morph-stage">
+              <WordTransform />
+            </div>
           </div>
           <div className="flex flex-col justify-end lg:col-span-4">
             <p className="max-w-md text-[1.1875rem] leading-[1.7] text-ink/70">
