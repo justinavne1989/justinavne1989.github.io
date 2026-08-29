@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    @apply bg-paper text-ink font-body antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  :focus-visible {
+    outline: 2px solid #3d6eff;
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: rgba(61, 110, 255, 0.22);
+  }
+}
+
+@layer components {
+  .site-wrap {
+    @apply mx-auto w-full max-w-site px-5 sm:px-8;
+  }
+
+  .site-wrap-wide {
+    @apply mx-auto w-full max-w-wide px-5 sm:px-8;
+  }
+
+  .eyebrow {
+    @apply font-sans text-[12px] font-medium uppercase tracking-[0.2em] text-accent;
+  }
+
+  .section-label {
+    @apply font-sans text-[12.5px] font-medium uppercase tracking-[0.16em] text-ink/55;
+  }
+
+  .prose-copy {
+    @apply font-body text-[1.175rem] leading-[1.75] text-ink/75;
+  }
+
+  .tag-meta {
+    @apply font-sans text-[12.5px] uppercase tracking-[0.1em] text-ink/55;
+  }
+
+  .case-link {
+    @apply inline-flex items-center gap-2 font-sans text-[14px] font-medium uppercase tracking-[0.12em] text-ink transition-colors hover:text-accent;
+  }
+
+  .text-link {
+    @apply inline-flex items-center gap-2 font-sans text-sm font-medium tracking-wide text-ink transition-colors hover:text-accent;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-sm bg-ink px-5 py-3 font-sans text-[14px] font-medium uppercase tracking-[0.14em] text-paper transition-colors hover:bg-ink-muted;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-sm border border-ink/15 bg-transparent px-5 py-3 font-sans text-[14px] font-medium uppercase tracking-[0.14em] text-ink transition-colors hover:border-ink/40 hover:bg-white;
+  }
+
+  .shot-frame {
+    @apply overflow-hidden border border-ink/10 bg-white shadow-shot;
+  }
+}
+
+@layer utilities {
+  .reveal {
+    animation: rise 0.7s ease both;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
