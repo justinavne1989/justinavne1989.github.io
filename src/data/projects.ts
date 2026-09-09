@@ -5,6 +5,7 @@ export type ProjectId =
   | "subscription-intelligence"
   | "ai-creative"
   | "product-planning"
+  | "stratacene"
   | "quantum-gm";
 
 export type Screenshot = {
@@ -370,6 +371,108 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: "stratacene",
+    slug: "stratacene",
+    href: "/work/stratacene",
+    category: "AI Systems / Simulation",
+    title: "Stratacene",
+    subtitle: "AI Multi-Agent World Simulation Platform",
+    thesis:
+      "The product problem is the boundary between agent reasoning and simulation reality: agents choose, the engine determines what happens.",
+    description:
+      "A simulation platform where autonomous AI agents govern synthetic countries, pursue competing objectives, and make strategic decisions while an independent world engine determines the consequences.",
+    tags: [
+      "AI Systems",
+      "Simulation",
+      "Multi-Agent",
+      "Product Architecture",
+      "Decision Systems",
+    ],
+    featured: true,
+    inDevelopment: true,
+    sequence: 4,
+    kind: "built",
+    hero: {
+      src: asset("images/stratacene/experiments.png"),
+      alt: "Stratacene experiments workspace with active runs, synthetic countries, and experiment status",
+      title: "Experiment workspace",
+      caption:
+        "The operating surface for designing, running, comparing, and replaying multi-agent world experiments.",
+    },
+    tour: [
+      {
+        src: asset("images/stratacene/experiments.png"),
+        alt: "Stratacene experiments workspace with active runs, synthetic countries, and experiment status",
+        title: "Experiment workspace",
+        navLabel: "Experiments",
+        caption:
+          "The operating surface for designing, running, comparing, and replaying multi-agent world experiments.",
+      },
+      {
+        src: asset("images/stratacene/world-definition.png"),
+        alt: "Create-experiment flow defining world source, country count, horizon, seed, and engine version",
+        title: "Experiment configuration",
+        navLabel: "Setup",
+        caption:
+          "Treats an experiment as a controlled configuration: world, horizon, seed, and engine version — not an ad-hoc prompt.",
+      },
+      {
+        src: asset("images/stratacene/country-state.png"),
+        alt: "Aster Republic country overview with GDP, living standard, conditions table, and recent causal events",
+        title: "Country state",
+        navLabel: "World state",
+        caption:
+          "Shows the country as the agent receives it: conditions, trends, and events produced by the engine.",
+      },
+      {
+        src: asset("images/stratacene/benchmark-compare.png"),
+        alt: "Benchmark comparison of frontier models and a heuristic agent under matched-world conditions",
+        title: "Matched-world comparison",
+        navLabel: "Benchmarks",
+        caption:
+          "Compares agent types under common conditions so strategy differences can be inspected, not just described.",
+      },
+      {
+        src: asset("images/stratacene/replay.png"),
+        alt: "Replay view with timeline, event stream, and causal inspector for a verified simulation run",
+        title: "Replay & inspection",
+        navLabel: "Replay",
+        caption:
+          "Makes a run inspectable: step through ticks, read the causal record, and see what the engine actually resolved.",
+      },
+    ],
+    featureShots: [
+      {
+        src: asset("images/stratacene/country-state.png"),
+        alt: "Aster Republic country overview with conditions, trends, and recent causal events",
+        title: "World state returned to the agent",
+        caption:
+          "After the engine resolves a decision, the resulting country state becomes context for the next choice.",
+      },
+      {
+        src: asset("images/stratacene/world-definition.png"),
+        alt: "Create-experiment flow defining world source, country count, horizon, seed, and engine version",
+        title: "Controlled experiment setup",
+        caption:
+          "World generation, horizon, seed, and engine version are part of the product — so runs can be compared.",
+      },
+      {
+        src: asset("images/stratacene/benchmark-compare.png"),
+        alt: "Benchmark comparison of different agent types under matched-world evaluation",
+        title: "Benchmark comparison",
+        caption:
+          "The useful question is not whether a decision looked interesting. It is how strategies differ under the same world.",
+      },
+      {
+        src: asset("images/stratacene/replay.png"),
+        alt: "Replay inspector showing timeline events and a deterministic causal record",
+        title: "Replay and causal inspection",
+        caption:
+          "A run is only useful if it can be stepped through, verified, and understood after the fact.",
+      },
+    ],
+  },
+  {
     id: "quantum-gm",
     slug: "quantum-gm",
     href: "/work/quantum-gm",
@@ -389,7 +492,7 @@ export const projects: Project[] = [
     ],
     featured: true,
     inDevelopment: true,
-    sequence: 4,
+    sequence: 5,
     kind: "built",
     hero: {
       src: asset("images/quantum-gm/dashboard.png"),

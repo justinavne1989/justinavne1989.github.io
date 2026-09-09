@@ -83,7 +83,7 @@ export function WorkPage() {
     <>
       <SEO
         title="Selected Work"
-        description="Work spanning consumer product delivery, subscription intelligence, applied AI, product prototyping, and sports technology."
+        description="Work spanning consumer product delivery, subscription intelligence, applied AI, product prototyping, multi-agent simulation, and sports technology."
       />
       <section className="border-b border-ink/10 bg-ink text-paper">
         <div className="site-wrap py-16 sm:py-24">
@@ -95,7 +95,8 @@ export function WorkPage() {
           </h1>
           <p className="mt-6 max-w-xl text-[1.1875rem] leading-[1.7] text-paper/70">
             Work spanning consumer product delivery, subscription intelligence,
-            applied AI, product prototyping, and sports technology.
+            applied AI, product prototyping, multi-agent simulation, and sports
+            technology.
           </p>
         </div>
       </section>

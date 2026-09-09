@@ -8,6 +8,7 @@ import { AiCreativePage } from "./pages/work/AiCreative";
 import { ConsumerAppPage } from "./pages/work/ConsumerApp";
 import { ProductPlanningPage } from "./pages/work/ProductPlanning";
 import { QuantumGMPage } from "./pages/work/QuantumGM";
+import { StratacenePage } from "./pages/work/Stratacene";
 import { SubscriptionIntelligencePage } from "./pages/work/SubscriptionIntelligence";
 
 const basename = import.meta.env.BASE_URL.replace(/\/$/, "") || "/";
@@ -21,6 +22,7 @@ const router = createBrowserRouter(
         { index: true, element: <HomePage /> },
         { path: "work", element: <WorkPage /> },
         { path: "work/quantum-gm", element: <QuantumGMPage /> },
+        { path: "work/stratacene", element: <StratacenePage /> },
         { path: "work/ai-creative", element: <AiCreativePage /> },
         {
           path: "work/subscription-intelligence",

@@ -10,7 +10,7 @@ import { builtProjects, leadershipProject } from "../data/projects";
 import { focusAreas, launchProofs, processSteps } from "../data/site";
 
 export function HomePage() {
-  const [first, second, third, fourth] = builtProjects;
+  const [first, second, third, fourth, fifth] = builtProjects;
 
   return (
     <>
@@ -121,11 +121,13 @@ export function HomePage() {
             ))}
           </div>
 
-          {fourth ? (
-            <Reveal className="mt-20">
-              <ProjectCard project={fourth} numbered />
-            </Reveal>
-          ) : null}
+          <div className="mt-20 grid gap-x-16 gap-y-20 lg:grid-cols-2">
+            {[fourth, fifth].filter(Boolean).map((project, index) => (
+              <Reveal key={project.id} delay={index * 80}>
+                <ProjectCard project={project} numbered />
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 

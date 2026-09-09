@@ -90,6 +90,62 @@ export function ArchitectureFlow({
   );
 }
 
+type ArchitectureLayer = {
+  title: string;
+  items: string[];
+};
+
+export function ArchitectureLayers({
+  layers,
+  dark = false,
+}: {
+  layers: ArchitectureLayer[];
+  dark?: boolean;
+}) {
+  return (
+    <ol className="flex flex-col overflow-x-hidden">
+      {layers.map((layer, index) => (
+        <li key={layer.title}>
+          <div
+            className={`border px-5 py-6 sm:px-7 sm:py-7 ${
+              dark
+                ? "border-paper/15 bg-white/5 text-paper"
+                : "border-ink/10 bg-white text-ink"
+            }`}
+          >
+            <p className="font-sans text-[12px] uppercase tracking-[0.16em] text-accent">
+              {String(index + 1).padStart(2, "0")}
+            </p>
+            <h3 className="mt-2 font-sans text-lg">{layer.title}</h3>
+            <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-2">
+              {layer.items.map((item) => (
+                <li
+                  key={item}
+                  className={`font-sans text-[13px] uppercase tracking-[0.1em] ${
+                    dark ? "text-paper/65" : "text-ink/60"
+                  }`}
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          {index < layers.length - 1 ? (
+            <p
+              className={`py-3 text-center font-sans text-xs tracking-[0.18em] ${
+                dark ? "text-paper/40" : "text-ink/35"
+              }`}
+              aria-hidden
+            >
+              ↓
+            </p>
+          ) : null}
+        </li>
+      ))}
+    </ol>
+  );
+}
+
 function SystemNode({
   label,
   dark,
