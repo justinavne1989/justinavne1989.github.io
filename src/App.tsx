@@ -10,11 +10,23 @@ import { ProductPlanningPage } from "./pages/work/ProductPlanning";
 import { QuantumGMPage } from "./pages/work/QuantumGM";
 import { StratacenePage } from "./pages/work/Stratacene";
 import { SubscriptionIntelligencePage } from "./pages/work/SubscriptionIntelligence";
+import {
+  OPERATING_APPROACH_SLUG,
+  OperatingApproachPage,
+} from "./pages/OperatingApproach";
 
 const basename = import.meta.env.BASE_URL.replace(/\/$/, "") || "/";
 
 const router = createBrowserRouter(
   [
+    {
+      path: OPERATING_APPROACH_SLUG,
+      element: <OperatingApproachPage />,
+    },
+    {
+      path: `${OPERATING_APPROACH_SLUG}/`,
+      element: <OperatingApproachPage />,
+    },
     {
       path: "/",
       element: <RootLayout />,
